@@ -57,17 +57,12 @@ namespace MISA.CukCuk.Api.Controllers
         /// </summary>
         /// <param name="entityId">Id của bảng dữ liệu</param>
         /// <returns>Thông tin của 1 đối tượng</returns>
-        /// CreatedBy: NVMANH (01/04/2021)
+        /// CreatedBy: NKTrung (07/04/2021)
         [HttpGet("{entityId}")]
-        public IActionResult Get(string entityId)
+        public IActionResult Get(Guid entityId)
         {
             // Thực hiện lấy dữ liệu từ Database:
-            var storeName = $"Proc_Get{_tableName}ById";
-            DynamicParameters dynamicParameters = new DynamicParameters();
-            var storeGetByIdInputParamName = $"@{_tableName}Id";
-            dynamicParameters.Add(storeGetByIdInputParamName, entityId);
-
-            var customer = _dbConnection.Query<MISAEntity>(storeName, param: dynamicParameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            var customer = _baseService.GetById(entityId);
             // Kiểm tra kết quả và trả về cho Client:
             if (customer == null)
                 return NoContent();
@@ -83,18 +78,16 @@ namespace MISA.CukCuk.Api.Controllers
         /// <returns>
         ///  - HttpCode: 200 nếu thêm được dữ liệu
         ///  - Lỗi dữ liệu không hợp lệ : 400 (BadRequest)
-        ///  - HttpCode: 500 nếu có lỗi hoặc Exceotion xảy ra trên Server
+        ///  - HttpCode: 500 nếu có lỗi hoặc Exception xảy ra trên Server
         /// </returns>
-        /// CreatedBy: NVMANH (01/04/2021)
+        /// CreatedBy: NKTrung (07/04/2021)
         [HttpPost]
         public IActionResult Post(MISAEntity entity)
         {
             // Validate dữ liệu:
             ValidateData(entity);
             // Thực hiện lấy dữ liệu từ Database:
-            var storeName = $"Proc_Insert{_tableName}";
-            var storeParam = entity;
-            var rowAffects = _dbConnection.Execute(storeName, param: storeParam, commandType: CommandType.StoredProcedure);
+            var rowAffects = _baseService.Insert(entity);
             // Kiểm tra kết quả và trả về cho Client:
             if (rowAffects == 0)
                 return NoContent();

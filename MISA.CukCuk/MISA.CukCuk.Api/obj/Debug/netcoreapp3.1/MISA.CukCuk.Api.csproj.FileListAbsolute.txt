@@ -17,11 +17,12 @@ D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\MISA.Cu
 D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\MISA.Core.pdb
 D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\MISA.Infrastructure.pdb
-D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\MISA.CukCuk.Api.csproj.CoreCompileInputs.cache
-D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\MISA.CukCuk.Api.MvcApplicationPartsAssemblyInfo.cache
 D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\MISA.CukCuk.Api.csproj.CopyComplete
 D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\staticwebassets\MISA.CukCuk.Api.StaticWebAssets.Manifest.cache
 D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\staticwebassets\MISA.CukCuk.Api.StaticWebAssets.xml
 D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\MISA.CukCuk.Api.dll
 D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\MISA.CukCuk.Api.pdb
 D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\MISA.CukCuk.Api.genruntimeconfig.cache
+D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\MISA.CukCuk.Api.csproj.CoreCompileInputs.cache
+D:\TrungNK\TTMisaApi\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\netcoreapp3.1\MISA.CukCuk.Api.MvcApplicationPartsAssemblyInfo.cache

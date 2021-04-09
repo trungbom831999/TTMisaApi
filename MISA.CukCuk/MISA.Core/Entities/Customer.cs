@@ -26,11 +26,6 @@ namespace MISA.Core.Entities
         public string FullName { get; set; }
 
         /// <summary>
-        ///  Ngày sinh
-        /// </summary>
-        public DateTime? DateOfBirth { get; set; }
-
-        /// <summary>
         /// Giới tính (0- Nữ, 1- Nam)
         /// </summary>
         public int? Gender { get; set; }
@@ -45,6 +40,11 @@ namespace MISA.Core.Entities
         /// </summary>
         public Guid? CustomerGroupId { get; set; }
 
+        /// <summary>
+        ///  Ngày sinh
+        /// </summary>
+        public DateTime? DateOfBirth { get; set; }
+            
         /// <summary>
         ///  Số điện thoại
         /// </summary>

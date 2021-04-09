@@ -17,7 +17,8 @@ namespace MISA.Infrastructure.Repository
                "Port=3306;" +
                "User Id= dev; " +
                "Password=12345678;" +
-               "Database= MF0_NVManh_CukCuk02";
+               "Database= MF0_NVManh_CukCuk02;" +
+               "convert zero datetime=True;";
         protected IDbConnection _dbConnection;
 
         public BaseRepository()
@@ -56,12 +57,20 @@ namespace MISA.Infrastructure.Repository
 
         public int Update(MISAEntity entity, Guid entityId)
         {
-            throw new NotImplementedException();
+            var storeName = $"Proc_Update{_tableName}";
+            var storeParam = entity;
+            var rowAffects = _dbConnection.Execute(storeName, param: storeParam, commandType: CommandType.StoredProcedure);
+            return rowAffects;
         }
 
         public int Delete(Guid entityId)
         {
-            throw new NotImplementedException();
+            var storeParam = new
+            {
+                CustomerId = entityId
+            };
+            var rowEffects = _dbConnection.Execute($"Proc_Delete{_tableName}", param: storeParam, commandType: CommandType.StoredProcedure);
+            return rowEffects;
         }
     }
 }

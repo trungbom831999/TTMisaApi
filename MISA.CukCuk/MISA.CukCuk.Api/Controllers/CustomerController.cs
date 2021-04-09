@@ -33,7 +33,7 @@ namespace MISA.CukCuk.Api.Controllers
         ///  - Lỗi dữ liệu không hợp lệ : 400 (BadRequest)
         ///  - HttpCode: 500 nếu có lỗi hoặc Exceotion xảy ra trên Server
         /// </returns>
-        /// CreatedBy: NVMANH (01/04/2021)
+        /// CreatedBy: NKTrung (07/04/2021)
         [HttpPut("{customerId}")]
         public IActionResult Put(Customer customer, Guid customerId)
         {
@@ -60,10 +60,7 @@ namespace MISA.CukCuk.Api.Controllers
             }
             customer.CustomerId = customerId;
             // Thực hiện lấy dữ liệu từ Database:
-
-            var storeName = "Proc_UpdateCustomer";
-            var storeParam = customer;
-            var rowAffects = _dbConnection.Execute(storeName, param: storeParam, commandType: CommandType.StoredProcedure);
+            var rowAffects = _customerService.Update(customer, customerId);
             // Kiểm tra kết quả và trả về cho Client:
             if (rowAffects == 0)
                 return NoContent();
@@ -85,11 +82,7 @@ namespace MISA.CukCuk.Api.Controllers
         public IActionResult Delete(Guid customerId)
         {
             // Thực hiện xóa dữ liệu từ Database:
-            var storeParam = new
-            {
-                CustomerId = customerId
-            };
-            var rowEffects = _dbConnection.Execute("Proc_DeleteCustomer", param: storeParam, commandType: CommandType.StoredProcedure);
+            var rowEffects = _customerService.Delete(customerId);
             // Kiểm tra kết quả và trả về cho Client:
             if (rowEffects == 0)
             {

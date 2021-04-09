@@ -19,28 +19,24 @@ namespace MISA.Core.Services
         }
         public MISAEntity GetById(Guid entityId)
         {
-            throw new NotImplementedException();
+            return _baseRepository.GetById(entityId);
         }
 
        
 
         public int Insert(MISAEntity entity)
         {
-            // Validate nghiệp vụ:
-
-            // Thực hiện thêm mới:
-            _baseRepository.Insert(entity);
-            throw new NotImplementedException();
+            return _baseRepository.Insert(entity);
         }
 
         public int Update(MISAEntity entity, Guid entityId)
         {
-            throw new NotImplementedException();
+            return _baseRepository.Update(entity, entityId);
         }
 
         public int Delete(Guid entityId)
         {
-            throw new NotImplementedException();
+            return _baseRepository.Delete(entityId);
         }
 
     }

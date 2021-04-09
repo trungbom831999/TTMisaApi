@@ -9,6 +9,12 @@ namespace MISA.Infrastructure.Repository
 {
     public class CustomerRepository : BaseRepository<Customer>, ICustomerRepository
     {
+        //public override int Update(Customer customer, Guid customerId)
+        //{
+
+        //    return 1;
+        //}
+
         public bool CheckCustomerCode(string customercode)
         {
            
